@@ -1,4 +1,4 @@
-class MohRegimen < ApplicationRecord
+class RegimenIndex < ApplicationRecord
   self.table_name =  'moh_regimens'
   self.primary_key = 'regimen_id'
 
