@@ -2,7 +2,11 @@
   <% regimen.combinations.each do |combination| %>
     <% next unless combination.id %>
 
-    <li><%= combination.name %><%= link_to 'Delete', regimen_combination_path(combination), method: :delete %></li>
+    <li>
+      <%= combination.name %>
+      <%= link_to 'X', regimen_combination_path(combination), method: :delete,
+                                                              class: 'btn btn-link text-danger',
+                                                              data: { confirm: 'Are you sure about deleting this combination?' } %>
+    </li>
   <% end %>
 </ul>
-

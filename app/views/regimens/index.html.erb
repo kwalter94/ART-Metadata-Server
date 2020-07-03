@@ -1,11 +1,15 @@
  <div class="container">
-  <h1>Regimens</h1>
+  <div class="row">
+    <div class="col-md-9">
+      <h1>Regimens</h1>
+    </div>
+    <div class="col-md-3">
+      <%= link_to 'Add Regimen', new_regimen_path, class: 'btn btn-primary', style: 'float: right' %>
+    </div>
   
   <div class="row">
     <%= render partial: 'regimen', collection: @regimens %>
   </div>
-
-  <%= link_to 'Add Regimen', new_regimen_path %>
 </div>
 
 <%= stylesheet_link_tag 'regimens' %>

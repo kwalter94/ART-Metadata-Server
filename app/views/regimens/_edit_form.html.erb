@@ -1,8 +1,10 @@
 <% unless regimen.errors.empty? %>
-  <div class="errors">
-    <% regimen.errors.each do |item, error| %>
-      <p class="error"><%= item %> - <%= error %></p>
-    <% end %>
+  <div class="alert alert-danger" role="alert">
+    <ul>
+      <% regimen.errors.each do |item, error| %>
+        <li><%= item %> - <%= error %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
 
@@ -11,8 +13,10 @@
     <%= render 'combination_fields', form: combos_form %>
   <% end %>
 
-  <%= link_to_add_fields '+ Combination', form, :combinations %>
+  <%= link_to_add_fields '+ Combination', form, :combinations, class: 'btn btn-outline-primary waves-effect', style: 'margin-top: 5px'%>
 
-  <%= form.submit 'Save' %>
+  <hr />
+
+  <%= form.submit 'Save', class: 'btn btn-primary' %>
 <% end %>
 

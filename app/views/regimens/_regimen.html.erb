@@ -5,6 +5,8 @@
     <div class="card-body">
       <h4 class="card-title"><%= regimen.name %></h4>
 
+      <hr />
+
       <ul>
         <% regimen.combinations.each do |combination| %>
           <li><%= combination.name %></li>
@@ -13,7 +15,7 @@
     </div>
 
     <div class="card-footer">
-      <%= link_to 'Edit', edit_regimen_path(regimen), class: "btn btn-danger" %>
+      <%= link_to 'Edit', edit_regimen_path(regimen), class: "btn btn-outline-primary waves-effect" %>
     </div>
   </div>
 </div>

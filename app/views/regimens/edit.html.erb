@@ -1,6 +1,9 @@
-<h1><%= @regimen.name %></h1>
+<div class="container">
+  <h1><%= @regimen.name %></h1>
+  <hr />
 
-<%= render 'combinations', regimen: @regimen %>
-<%= render 'edit_form', regimen: @regimen %>
+  <%= render 'combinations', regimen: @regimen %>
+  <%= render 'edit_form', regimen: @regimen %>
+</div>
 
 <%= javascript_include_tag 'regimens' %>

@@ -17,8 +17,10 @@ function addField(event) {
 
 function removeField(event) {
   const parent = event.target.parentNode
-  const drugFields = parent.querySelectorAll('select')  // :last-child???
-  drugFields[drugFields.length - 1].remove()
+  const drugSelectFields = parent.querySelectorAll('select')  // :last-child???
+  const lastDrugSelectField = drugSelectFields[drugSelectFields.length - 1];
+  lastDrugSelectField.parentNode.remove();
+  
   event.preventDefault()
 }
 

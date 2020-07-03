@@ -7,16 +7,20 @@
 <% end %>
 
 <%= form_for regimen, url: { action: :create } do |form| %>
-  <%= form.text_field :name, placeholder: 'Regimen name' %>
+  <%= form.text_field :name, placeholder: 'Regimen name', class: 'form-control' %>
 
-  <hr />
+  <br />
 
+  <h5>Combinations</h5>
   <%= form.fields_for :combinations, RegimenCombination.new do |combos_form| %>
     <%= render 'combination_fields', form: combos_form %>
   <% end %>
 
-  <%= link_to_add_fields '+ Combination', form, :combinations %>
 
-  <%= form.submit 'Create' %>
+  <%= link_to_add_fields '+ Combination', form, :combinations, class: 'btn btn-outline-primary waves-effect', style: 'margin-top: 5px' %>
+
+  <hr />
+
+  <%= form.submit 'Create', class: "btn btn-primary" %>
 <% end %>
 

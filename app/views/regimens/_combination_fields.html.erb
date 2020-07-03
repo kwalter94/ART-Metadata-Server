@@ -1,8 +1,16 @@
-<div class="regimen_combination">
+<div class="regimen_combination form-row">
   <%= form.fields_for :drugs, RegimenCombinationDrug.new do |drugs_form| %>
     <%= render 'drug_fields', form: drugs_form %>
   <% end %>
 
-  <%= link_to_add_fields '+ Drug', form, :drugs %>
-  <a href="#" class="remove_fields">- Drug</a>
+  <%= link_to_add_fields '+', form, :drugs, class: 'btn btn-outline-default waves-effect' %>
+  <a href="#" class="remove_fields btn btn-outline-danger waves-effect">-</a>
 </div>
+
+<style>
+.btn {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+</style>
