@@ -1,0 +1,22 @@
+<% unless regimen.errors.empty? %>
+  <div class="errors">
+    <% regimen.errors.each do |item, error| %>
+      <p class="error"><%= item %> - <%= error %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for regimen, url: { action: :create } do |form| %>
+  <%= form.text_field :name, placeholder: 'Regimen name' %>
+
+  <hr />
+
+  <%= form.fields_for :combinations, RegimenCombination.new do |combos_form| %>
+    <%= render 'combination_fields', form: combos_form %>
+  <% end %>
+
+  <%= link_to_add_fields '+ Combination', form, :combinations %>
+
+  <%= form.submit 'Create' %>
+<% end %>
+

@@ -1,0 +1,19 @@
+<div class="col-md-4" style="padding-top: 5px; padding-bottom: 5px">
+  <div class="card regimen">
+    <header class="card-header <%= regimen.name[-1].casecmp?('P') ? 'paed-regimen-header' : 'adult-regimen-header' %>"></header>
+
+    <div class="card-body">
+      <h4 class="card-title"><%= regimen.name %></h4>
+
+      <ul>
+        <% regimen.combinations.each do |combination| %>
+          <li><%= combination.name %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="card-footer">
+      <%= link_to 'Edit', edit_regimen_path(regimen), class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

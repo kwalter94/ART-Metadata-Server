@@ -1,0 +1,8 @@
+<ul>
+  <% regimen.combinations.each do |combination| %>
+    <% next unless combination.id %>
+
+    <li><%= combination.name %><%= link_to 'Delete', regimen_combination_path(combination), method: :delete %></li>
+  <% end %>
+</ul>
+

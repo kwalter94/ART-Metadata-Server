@@ -1,0 +1,6 @@
+<h1><%= @regimen.name %></h1>
+
+<%= render 'combinations', regimen: @regimen %>
+<%= render 'edit_form', regimen: @regimen %>
+
+<%= javascript_include_tag 'regimens' %>
