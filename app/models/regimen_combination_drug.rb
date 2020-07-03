@@ -4,10 +4,10 @@ class RegimenCombinationDrug < ApplicationRecord
 
   belongs_to :drug
   has_many :alternative_names, class_name: 'AlternativeDrugName',
-                               foreign_key: :drug_id,
-                               primary_key: :drug_inventory_id
+                               primary_key: :drug_id,
+                               foreign_key: :drug_inventory_id
 
   def name
-    alternative_names.first&.name || drug.name
+    alternative_names.first&.name || drug&.name || 'N/A'
   end
 end
