@@ -6,10 +6,23 @@
     <div class="col-md-3">
       <%= link_to 'Add Regimen', new_regimen_path, class: 'btn btn-primary', style: 'float: right' %>
     </div>
+  </div>
   
   <div class="row">
-    <%= render partial: 'regimen', collection: @regimens %>
+    <div class="col-md-12">
+      <table id="regimens-table" class="table">
+        <thead class="regimen-row">
+          <th>Regimen Name</th>
+          <th>Drugs</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          <%= render partial: 'regimen', collection: @regimens %>
+        <tbody>
+      </table>
+    </div>
   </div>
 </div>
 
 <%= stylesheet_link_tag 'regimens' %>
+<%= javascript_include_tag 'regimens/index' %>

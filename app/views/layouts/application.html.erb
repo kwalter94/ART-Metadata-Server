@@ -16,13 +16,10 @@
     <%= stylesheet_link_tag 'bootstrap.min' %>
     <!-- Material Design Bootstrap -->
     <%= stylesheet_link_tag 'mdb.min' %>
+    <%= stylesheet_link_tag 'addons/datatables2.min' %>
   </head>
 
   <body>
-    <%= render 'nav' %>
-
-    <%= yield %>
-
     <!-- jQuery -->
     <%= javascript_include_tag 'jquery.min' %>
     <!-- Bootstrap tooltips -->
@@ -31,5 +28,10 @@
     <%= javascript_include_tag 'bootstrap.min' %>
     <!-- MDB core JavaScript -->
     <%= javascript_include_tag 'mdb.min' %>
+    <%= javascript_include_tag 'addons/datatables2.min' %>
+
+    <%= render 'nav' %>
+    
+    <%= yield %>
   </body>
 </html>

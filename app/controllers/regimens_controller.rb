@@ -1,6 +1,11 @@
 class RegimensController < ApplicationController
+  REGIMEN_SORT_POSITION_LAST = 1_000_000 # Hopefully we will never have this many regimens
+
   def index
-    @regimens = regimens.order(:name)
+    @regimens = regimens.sort_by do |regimen|
+      # All non-numeric regimens (eg Other) should be placed last
+      regimen.name[0].match?(/\d/) ? regimen.name.to_i : REGIMEN_SORT_POSITION_LAST
+    end
   end
 
   def new

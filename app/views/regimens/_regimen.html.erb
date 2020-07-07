@@ -1,21 +1,14 @@
-<div class="col-md-4" style="padding-top: 5px; padding-bottom: 5px">
-  <div class="card regimen">
-    <header class="card-header <%= regimen.name[-1].casecmp?('P') ? 'paed-regimen-header' : 'adult-regimen-header' %>"></header>
+<tr class="regimen-row <%= regimen.name[-1].casecmp?('P') ? 'paed-regimen-row' : 'adult-regimen-row' %>">
+  <td><%= regimen.name %></td>
+  <td>
+    <ul>
+      <% regimen.combinations.sort_by(&:name).each do |combination| %>
+        <li><%= combination.name %></li>
+      <% end %>
+    </ul>
+  </td>
 
-    <div class="card-body">
-      <h4 class="card-title"><%= regimen.name %></h4>
-
-      <hr />
-
-      <ul>
-        <% regimen.combinations.each do |combination| %>
-          <li><%= combination.name %></li>
-        <% end %>
-      </ul>
-    </div>
-
-    <div class="card-footer">
-      <%= link_to 'Edit', edit_regimen_path(regimen), class: "btn btn-outline-primary waves-effect" %>
-    </div>
-  </div>
-</div>
+  <td>
+    <%= link_to 'Edit', edit_regimen_path(regimen), class: "btn btn-outline-primary waves-effect" %>
+  </td>
+</tr>

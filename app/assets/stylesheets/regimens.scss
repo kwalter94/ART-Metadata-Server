@@ -1,17 +1,24 @@
 // Place all the styles related to the regimens controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.regimen {
-  height: 100%;
-  margin-top: 10px;
+
+.regimens-table {
+  width: 100%;
 }
 
-.paed-regimen-header {
-  background: linear-gradient(40deg, #ff6ec4, #7873f5) !important;
+.regimen-row > td, .regimen-row > th {
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+.paed-regimen-row {
+  background-color: #b19cd9;
+  border: 1px solid purple;
 } 
 
-.adult-regimen-header {
-  background: linear-gradient(40deg, yellow, orange);
+.adult-regimen-row {
+  background-color: #ffffe0;
+  border: 1px solid yellow;
 }
 
 .card-footer {

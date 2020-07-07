@@ -9,6 +9,6 @@ class RegimenCombination < ApplicationRecord
   accepts_nested_attributes_for :drugs, allow_destroy: true
 
   def name
-    drugs.collect(&:name).join(' / ')
+    drugs.sort_by(&:name).collect(&:name).join(' + ')
   end
 end
