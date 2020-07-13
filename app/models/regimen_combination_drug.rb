@@ -8,6 +8,6 @@ class RegimenCombinationDrug < ApplicationRecord
                                foreign_key: :drug_inventory_id
 
   def name
-    alternative_names.first&.name || drug&.name || 'N/A'
+    drug.moh_name || "Unknown drug ##{drug_id}"
   end
 end

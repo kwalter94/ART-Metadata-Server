@@ -1,0 +1,18 @@
+<div class="container">
+  <%= form_for @drug, url: { controller: 'moh_names', action: 'update' }, class: 'form' do |f| %>
+    <h4><%= @drug.name %></h4>
+    <hr />
+    
+    <% if @updated %>
+      <div class="alert alert-success">Successfully updated drug name</div>
+    <% end %>
+
+    <% if @moh_name && !@moh_name.errors.empty? %>
+      <div class="alert alert-danger">Failed to update drug name: <%= @moh_name.errors[:name] %></div> 
+    <% end %>
+    
+    <%= f.label 'MoH Name'%>
+    <%= f.text_field :name, value: @drug.moh_name, class: 'form-control mb-4', placeholder: 'MoH Name' %>
+    <%= f.submit 'Update', class: 'btn btn-primary' %>
+  <% end %>
+</div>

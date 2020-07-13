@@ -3,7 +3,7 @@
     <% next unless combination.id %>
 
     <li>
-      <%= combination.name %>
+      <%= combination.moh_name %>
       <%= link_to 'X', regimen_combination_path(combination), method: :delete,
                                                               class: 'btn btn-link text-danger',
                                                               data: { confirm: 'Are you sure about deleting this combination?' } %>

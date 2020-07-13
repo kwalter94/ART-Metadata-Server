@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :regimens
   resources :regimen_combinations, path: 'combinations'
+  resources :moh_names
 
   root to: 'regimens#index'
 end

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>MoH Drug Names</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table id="moh-names-table" class="table table-striped">
+        <thead>
+          <th>System name</th>
+          <th>MoH Name</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          <%= render partial: 'drug', collection: @drugs %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'moh_names/index' %>

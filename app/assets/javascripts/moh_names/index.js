@@ -4,7 +4,7 @@
 document.addEventListener("turbolinks:load", function() {
   "use strict";
   
-  if ($("#regimens-table_wrapper").length == 0) {
-    $('#regimens-table').DataTable()
+  if ($("#moh-names-table_wrapper").length == 0) {
+    $('#moh-names-table').DataTable()
   }
 })
