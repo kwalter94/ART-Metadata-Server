@@ -1,7 +1,3 @@
-import { isDataTableInitialised } from '../helpers/datatables';
+import { initDataTable } from '../helpers/datatables';
 
-$(document).on('turbolinks:load', function(_event) {
-  if (!isDataTableInitialised('dosages-table')) {
-    $('#dosages-table').DataTable({scrollX: true});
-  }
-});
+$(document).on('turbolinks:load', () => initDataTable('dosages-table', {scrollX: true}));
