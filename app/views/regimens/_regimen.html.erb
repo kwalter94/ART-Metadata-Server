@@ -1,5 +1,5 @@
-<tr class="regimen-row <%= regimen.name[-1].casecmp?('P') ? 'paed-regimen-row' : 'adult-regimen-row' %>">
-  <td><%= regimen.name %></td>
+<tr>
+  <td class="<%= regimen.name[-1].casecmp?('P') ? 'paed-regimen-row' : 'adult-regimen-row' %>"><%= regimen.name %></td>
   <td>
     <ul>
       <% regimen.combinations.sort_by(&:name).each do |combination| %>
@@ -9,6 +9,6 @@
   </td>
 
   <td>
-    <%= link_to 'Edit', edit_regimen_path(regimen), class: "btn btn-outline-primary waves-effect" %>
+    <a href="<%= edit_regimen_path(regimen) %>" class="btn btn-link text-primary"><i class="fas fa-edit"></i></a>
   </td>
 </tr>

@@ -15,5 +15,10 @@
  */
 
  .container {
-   margin: 5%;
+   margin-top: 20px;
  }
+
+.icon-button {
+  padding: 0;
+  margin: auto;
+}
