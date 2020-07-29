@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead>
+    <td>Regimen</td>
+    <td>Min. Weight</td>
+    <td>Max. Weight</td>
+    <td>AM</td>
+    <td>PM</td>
+    <td>
+  </thead>
+  <tbody>
+    <% dosages.each do |dosage| %>
+      <tr>
+        <td><%= dosage.regimen.name %></td>
+        <td><%= dosage.min_weight %></td>
+        <td><%= dosage.max_weight %></td>
+        <td><%= dosage.dose.am %></td>
+        <td><%= dosage.dose.pm %></td>
+        <td>
+          <%= link_to 'X', dosage_path(dosage.drug_inventory_id, ingredient_id: dosage.ingredient_id), method: :delete,
+                                                                                                       class: 'btn btn-link text-danger',
+                                                                                                       data: { confirm: 'Are you sure about deleting this weight?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</ul>

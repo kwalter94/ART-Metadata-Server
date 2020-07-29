@@ -1,0 +1,7 @@
+<div class="container">
+  <h1><%= @drug.name %></h1>
+
+  <%= render 'dosages', dosages: @dosages %>
+</div>
+
+<%= javascript_pack_tag 'regimens/edit' %>

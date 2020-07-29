@@ -3,6 +3,14 @@ class DosagesController < ApplicationController
     @drug_dosages = drug_dosages
   end
 
+  def edit
+    @drug = Drug.find(params[:id])
+    @dosages = RegimenIngredient.where(drug: @drug).sort_by do |ingredient|
+      [ingredient.regimen.name, ingredient.min_weight]
+    end
+    @doses = RegimenDose.all
+  end
+
   private
 
   def drug_dosages

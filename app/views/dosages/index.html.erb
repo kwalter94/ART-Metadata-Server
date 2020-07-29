@@ -13,8 +13,8 @@
       <td class="dosage-cell">30 - 34.9kg<br/><span class="dosage-am">AM</span><span class="dosage-pm">PM</span></td>
       <td class="dosage-cell">35 - 39.9kg<br/><span class="dosage-am">AM</span><span class="dosage-pm">PM</span></td>
       <td class="dosage-cell">40 - 49.9kg<br/><span class="dosage-am">AM</span><span class="dosage-pm">PM</span></td>
-      <td class="dosage-cell">50kg+</td>
-      <td>Actions</td>
+      <td class="dosage-cell">50kg+<br/><span class="dosage-am">AM</span><span class="dosage-pm">PM</span></td>
+      <td class="dosage-cell">Actions</td>
     </thead>
     <tbody>
       <% @drug_dosages.each do |drug, dosages| %>
@@ -32,8 +32,8 @@
               <td></td>
             <% end %>
           <% end %>
-          <td>
-            <a href="#" class="btn btn-link text-primary icon-button"><i class="fas fa-edit mr-1"></i></a>
+          <td class="dosage-cell">
+            <a href="<%= edit_dosage_path(drug.id) %>" class="btn btn-link text-primary icon-button"><i class="fas fa-edit mr-1"></i></a>
           </td>
         </tr>
       <% end %>
@@ -59,11 +59,6 @@
   .dosage-pm {
     text-align: right;
     padding-left: 10px;
-  }
-
-  .icon-button {
-    padding: 0;
-    margin: auto;
   }
 </style>
 
