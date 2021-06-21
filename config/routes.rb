@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :regimens
   resources :regimen_combinations, path: 'combinations'
 
+  resource :metadata, only: %i[show]
+
   root to: 'regimens#index'
 end
