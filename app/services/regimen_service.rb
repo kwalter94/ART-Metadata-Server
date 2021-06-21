@@ -16,11 +16,7 @@ module RegimenService
     private
 
     def validate_regimen_doesnt_exist(name)
-      regimen_name = Regimen.find_by_name(name)
-
-      return unless regimen_name
-
-      raise ItemAlreadyExists, "Regimen #{name} already exists."
+      raise ItemAlreadyExists, "Regimen #{name} already exists." if Regimen.where(name: name).exists
     end
   end
 end
