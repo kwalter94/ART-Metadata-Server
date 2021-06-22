@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :regimens
   resources :regimen_combinations, path: 'combinations'
 
-  resource :metadata, only: %i[show]
+  namespace :metadata do
+    get 'openmrs', to: 'openmrs'
+    get 'moh', to: 'moh'
+  end
 
   root to: 'regimens#index'
 end
