@@ -1,0 +1,15 @@
+<div class="container">
+  <h1><%= @regimen.name %></h1>
+  <hr />
+
+  <%= render 'combinations', regimen: @regimen %>
+  
+  <span>
+    <%= link_to 'Edit', edit_regimen_path(@regimen), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', regimen_path(@regimen), class: 'btn btn-danger',
+                                                      method: 'delete',
+                                                      data: 'Are you sure you want to delete this regimen?' %>
+  <span>
+</div>
+
+<%= javascript_pack_tag 'regimens/edit' %>

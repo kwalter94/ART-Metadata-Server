@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1><%= @arv.name %></h1>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-12">
+      <h6 class="text-muted">
+        <%= @arv.moh_name %>
+        <a href="<%= edit_moh_name_path(@arv.alternative_names.first) %>" class="btn btn-link text-primary"><i class="fas fa-edit"></i></a>
+      </h6>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-1">
+      <span class="fw-bold">Regimens:</span>
+    </div>
+    <div class="col-sm-8">
+      <ul class="list-inline">
+        <% @regimens.each do |regimen| %>
+          <li class="list-inline-item"><%= regimen.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>Doses</h4>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped">
+        <thead>
+          <th>Min. Weight</th>
+          <th>Max. Weight</th>
+          <th>AM</th>
+          <th>PM</th>
+        </thead>
+        <tbody>
+          <% @ingredients.each do |ingredient| %>
+            <tr>
+              <td><%= ingredient.min_weight %></td>
+              <td><%= ingredient.max_weight %></td>
+              <td><%= ingredient.dose.am %></td>
+              <td><%= ingredient.dose.pm %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

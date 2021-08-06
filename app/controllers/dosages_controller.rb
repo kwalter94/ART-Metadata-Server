@@ -14,7 +14,7 @@ class DosagesController < ApplicationController
   private
 
   def drug_dosages
-    all_ingredients.each_with_object({}) do |dosage, dosages|
+    asll_ingredients.each_with_object({}) do |dosage, dosages|
       dosages[dosage.drug] = [] unless dosages.include?(dosage.drug)
 
       next if dosages[dosage.drug].find { |d| d.min_weight == dosage.min_weight }

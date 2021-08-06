@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @arv.name %></h1>
+
+  <%= form_with url: { action: :update } do |form| %>
+    <%= form.label 'Dose', for: :dose %>
+    <%= form.select :dose, RegimenDose.all.map { |dose| ["AM: #{dose.am}, PM: #{dose.pm}", dose.dose_id] }, {}, class: 'form-select form-select-lg' %>
+    <hr />
+
+    <%= form.submit 'Save', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<%= javascript_pack_tag 'regimens/edit' %>

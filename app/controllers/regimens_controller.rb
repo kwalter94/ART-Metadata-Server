@@ -1,6 +1,10 @@
 class RegimensController < ApplicationController
   REGIMEN_SORT_POSITION_LAST = 1_000_000 # Hopefully we will never have this many regimens
 
+  def show
+    @regimen = Regimen.find(params[:id])
+  end
+
   def index
     @regimens = regimens.sort_by do |regimen|
       # All non-numeric regimens (eg Other) should be placed last
@@ -35,6 +39,13 @@ class RegimensController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @regimen = Regimen.find(params[:id])
+    @regimen.destroy
+
+    redirect_to regimens_path
   end
 
   private

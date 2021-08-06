@@ -4,6 +4,8 @@ class Regimen < ApplicationRecord
 
   has_many :combinations, class_name: 'RegimenCombination',
                           foreign_key: :regimen_name_id
+  has_many :ingredients, class_name: 'RegimenIngredient',
+                         foreign_key: 'ingredient_id'
 
   accepts_nested_attributes_for :combinations, allow_destroy: true
 end
